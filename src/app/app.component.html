@@ -1,0 +1,19 @@
+<!-- The content below is only a placeholder and can be replaced.-->
+<!-- 
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+  <div *ngFor="let artist of artists" class="pop" cdkDrag>{{artist}}</div>
+  </div> -->
+
+  <div cdkDropList  class="items-container" (cdkDropListDropped)="drop($event)">
+    <div
+      class="item"
+      cdkDrag
+      *ngFor="let artist of artists; let in = index">
+      <!-- <img class="item-image" [src]="user.picture.thumbnail"> -->
+      <div class="item-content">
+        <p class="item-content-primary">{{artist}}</p>
+      </div>
+      <button  type="button" class="btn" (click)="ondelete(in)"></button>
+    </div>
+  </div>
+<router-outlet></router-outlet>
